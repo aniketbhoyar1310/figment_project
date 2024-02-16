@@ -1,8 +1,11 @@
 import React from 'react'
+import Login from './Componets/Login'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div className=' '>
+      <Login/>
+    </div>
   )
 }
 
