@@ -41,33 +41,36 @@ const LoginPage = () => {
     >
       {/* Content Side */}
       <div
-        className="flex flex-col "
+        className="flex flex-col   px-6 py-6"
         style={{ boxShadow: "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px" }}
       >
-        <img
-          src={loginImage}
-          alt="Notice Image"
-          className="w-96 mb-8 rounded-lg"
-        />
+        <img src={loginImage} alt="Notice Image" className="w-96  rounded-lg" />
         <div className=" pl-8">
-          <h4 className="font-bold mb-6 font-lato-bold" >
-          <span style={{color:"#3b82f6"}}><BsArrowRightCircleFill /></span> <span> India’s First Notice Alert Solution</span> 
+          <h4 className="font-bold mb-6 font-lato-bold">
+            India’s First Notice Alert Solution
           </h4>
-          <p className="mb-1 font-lato-thin animate-fade-in">
-            Automatic Download Notices From Portal
+          <p className="mb-1 font-lato-thin  flex gap-3 items-center ">
+            <span style={{ color: "#3b82f6", fontSize: "14px" }}>
+              <BsArrowRightCircleFill />
+            </span>
+            <span>Access Anywhere, Anytime</span>
           </p>
-          <p className="mb-1 font-lato-thin animate-fade-in">
-            Access Anywhere, Anytime
+          <p className="mb-1 font-lato-thin animate-fade-in flex items-center gap-3">
+            <span style={{ color: "#3b82f6", fontSize: "14px" }}>
+              <BsArrowRightCircleFill />
+            </span>
+            <span> 100% Accurate, Cloud Based & Secure. </span>
           </p>
-          <p className="mb-1 font-lato-thin animate-fade-in">
-            100% Accurate, Cloud Based & Secure.
+
+          <p className="mb-1 font-lato-thin animate-fade-in flex items-center gap-3">
+            <span style={{ color: "#3b82f6", fontSize: "14px" }}>
+              <BsArrowRightCircleFill />
+            </span>
+            <span> NoticeAlert, GST, E-Invoicing & Many More </span>
           </p>
-          <p className="mb-1 font-lato-thin animate-fade-in">
-            NoticeAlert, GST, E-Invoicing & Many More
-          </p>
-          <p className="mb-1 font-lato-thin animate-fade-in">
-            Notice Alert is a product of TAX CPC Figment Global Solution Pvt.
-            Ltd
+
+          <p className="  mt-4 font-lato-thin " style={{ fontSize: "14px" }}>
+            Notice Alert is a product of TAX CPC Figment Global Solution Pvt Ltd
           </p>
         </div>
       </div>
@@ -83,6 +86,7 @@ const LoginPage = () => {
             alt="Login Image"
             className="w-28 mb-8 m-auto "
           />
+
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="relative">
               <input
@@ -119,6 +123,11 @@ const LoginPage = () => {
                 {showPassword ? <IoEyeOffOutline /> : <IoEyeOutline />}
               </button>
             </div>
+            <div className="mt-4 text-right font-lato-thin  text-xs">
+            <button className="text-blue-500 hover:text-blue-700 focus:outline-none">
+              Forgot Password?
+            </button>
+          </div>
             <button
               className={`w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 ${
                 darkMode ? "hover:bg-blue-700" : "hover:bg-blue-600"
@@ -128,11 +137,7 @@ const LoginPage = () => {
               Login
             </button>
           </form>
-          <div className="mt-4">
-            <button className="text-blue-500 hover:text-blue-700 focus:outline-none">
-              Forgot Password?
-            </button>
-          </div>
+          
           <div className="mt-2">
             <button className="text-green-500 hover:text-green-700 focus:outline-none">
               New On Our Platform? Create An Account
