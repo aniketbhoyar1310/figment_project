@@ -1,3 +1,15 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+body{
+    font-family: 'Lato', 'sans-serif';
+}
+input::placeholder{
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* input:focus{
+   padding-left: 10px;
+    transition: 0.3s ease-in;
+} */
