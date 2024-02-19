@@ -190,7 +190,7 @@ const AddNotice = () => {
               </div>
             )}
           </div>
-          {/* Select */}wedfwef
+          {/* Select */}we
           <div className="mb-4">
             <label
               htmlFor="refnotice"
