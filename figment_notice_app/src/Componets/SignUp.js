@@ -51,7 +51,7 @@ const SignUpPage = () => {
       setFormErrors(errors);
     } else {
       console.log("Form Data:", formData);
-      alert("Sign in Successfully")
+      alert("Sign in successfully")
       navigate('/')
       
     }

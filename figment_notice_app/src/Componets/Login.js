@@ -3,10 +3,11 @@ import loginImage from "../Assest/Mobile login-amico.png";
 import figmetLogo from "../Assest/Figment-Logo-1.png";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { BsArrowRightCircleFill } from "react-icons/bs";
-import { FaGoogle, FaMicrosoft } from "react-icons/fa";
+import { CiLight } from "react-icons/ci";
 import msinfo from "../Assest/ms-pictogram.svg";
 import Googleimg from "../Assest/download.svg";
 import { Link } from "react-router-dom";
+import { MdDarkMode } from "react-icons/md";
 
 const LoginPage = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -56,7 +57,7 @@ const LoginPage = () => {
     if (formValid) {
       // Add your login logic here
       console.log("Email:", email, "Password:", password);
-      alert("Login Successfully")
+      alert("Login Successfully");
     }
   };
 
@@ -149,7 +150,6 @@ const LoginPage = () => {
                 placeholder="Email"
                 value={email}
                 onChange={handleEmailChange}
-               
               />
               {errors.email && <p className="text-red-500">{errors.email}</p>}
             </div>
@@ -164,7 +164,6 @@ const LoginPage = () => {
                 placeholder="Password"
                 value={password}
                 onChange={handlePasswordChange}
-                
               />
               <button
                 type="button"
@@ -190,7 +189,10 @@ const LoginPage = () => {
           </form>
           <div className="mt-3 mb-2 font-lato-thin text-sm">
             <button className="">
-              New On Our Platform? <Link to={"/Signup"} className=" text-blue-600">Create An Account</Link>
+              New On Our Platform?{" "}
+              <Link to={"/Signup"} className=" text-blue-600">
+                Create An Account
+              </Link>
             </button>
           </div>
         </div>
@@ -230,7 +232,7 @@ const LoginPage = () => {
           }`}
           onClick={toggleDarkMode}
         >
-          {darkMode ? "Light Mode" : "Dark Mode"}
+          {darkMode ? <CiLight /> : <MdDarkMode />}
         </button>
       </div>
     </div>
