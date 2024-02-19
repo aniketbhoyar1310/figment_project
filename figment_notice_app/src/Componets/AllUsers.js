@@ -1,10 +1,13 @@
 import { useState } from "react";
 import React from "react";
+import Navbar from "./Navbar";
 
 const AllUsers = () => {
   const [showModal, setShowModal] = React.useState(false);
 
   return (
+    <div>
+    <Navbar/>
     <div className="all_users">
       <div className="py-3 px-4">
         <nav className="flex" aria-label="Breadcrumb ">
@@ -303,6 +306,7 @@ const AllUsers = () => {
           ) : null}
         </div>
       </div>
+    </div>
     </div>
   );
 };

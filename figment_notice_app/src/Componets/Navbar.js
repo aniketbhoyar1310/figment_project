@@ -3,13 +3,14 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import './Nav.css'
+import { Link } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Product', href: '#', current: true },
-  { name: 'Dashboard', href: '#', current: false },
-  { name: 'Notice', href: '#', current: false },
-  { name: 'Summision', href: '#', current: false },
-  { name: 'All Users', href: '#', current: false },
+  { name: 'Product', to: '#', current: false },
+  { name: 'Dashboard', to: '/dashboard', current: true },
+  { name: 'Notice', to: '/notice', current: false },
+  { name: 'Submission', to: '/submission', current: false },
+  { name: 'All Users', to: '/allusers', current: false },
 ]
 
 function classNames(...classes) {
@@ -48,9 +49,9 @@ const Navbar = () => {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.to}
                       className={classNames(
                         item.current ? 'border-b-4 border-[rgb(77,140,255)] text-black' : 'text-gray-500  delay-200  hover:text-black',
                         ' px-3 py-2 text-sm font-medium'
@@ -58,7 +59,7 @@ const Navbar = () => {
                       aria-current={item.current ? 'page' : undefined}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
