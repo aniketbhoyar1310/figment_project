@@ -10,6 +10,7 @@ const App = () => {
       <Dashboard/>
       {/* <Navbar/> */}
       {/* <AllUsers/> */}
+      <AllUsers/>
     </div>
   )
 }
