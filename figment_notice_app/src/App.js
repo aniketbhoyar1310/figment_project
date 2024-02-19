@@ -1,10 +1,15 @@
 import React from 'react'
+import Dashboard from './Componets/Dashboard'
+import Calender from './Componets/Calender'
+import AllUsers from './Componets/AllUsers'
 import Navbar from './Componets/Navbar'
 
 const App = () => {
   return (
     <div className=''>
-      <Navbar/>
+      <Dashboard/>
+      {/* <Navbar/> */}
+      {/* <AllUsers/> */}
     </div>
   )
 }
