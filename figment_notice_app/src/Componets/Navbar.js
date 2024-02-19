@@ -2,13 +2,15 @@ import React from 'react';
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import './Nav.css'
+import { Link } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Product', href: '#', current: true },
-  { name: 'Dashboard', href: '#', current: false },
-  { name: 'Notice', href: '#', current: false },
-  { name: 'Summision', href: '#', current: false },
-  { name: 'All Users', href: '#', current: false },
+  { name: 'Product', to: '#', current: false },
+  { name: 'Dashboard', to: '/dashboard', current: true },
+  { name: 'Notice', to: '/notice', current: false },
+  { name: 'Submission', to: '/submission', current: false },
+  { name: 'All Users', to: '/allusers', current: false },
 ]
 
 function classNames(...classes) {
@@ -16,12 +18,13 @@ function classNames(...classes) {
 }
 
 
+
 const Navbar = () => {
   return (
-    <Disclosure as="nav" className="bg-gray-white text-black shadow">
+    <Disclosure as="nav" className=" text-black shadow sticky top-0 z-50 backdrop-filter backdrop-blur-lg bg-opacity-30">
     {({ open }) => (
       <>
-        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               {/* Mobile menu button*/}
@@ -46,25 +49,25 @@ const Navbar = () => {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.to}
                       className={classNames(
-                        item.current ? 'border-b-4 border-[rgb(77,140,255)] text-black' : 'text-gray-500 hover:border-b-4 border-[rgb(77,140,255)] delay-200  hover:text-black',
+                        item.current ? 'border-b-4 border-[rgb(77,140,255)] text-black' : 'text-gray-500  delay-200  hover:text-black',
                         ' px-3 py-2 text-sm font-medium'
                       )}
                       aria-current={item.current ? 'page' : undefined}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
               {/* Profile dropdown */}
               <Menu as="div" className="relative ml-3">
+                
                 <div>
                   <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                     <span className="absolute -inset-1.5" />

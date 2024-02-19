@@ -6,10 +6,12 @@ import { BsArrowRightCircleFill } from "react-icons/bs";
 import { CiLight } from "react-icons/ci";
 import msinfo from "../Assest/ms-pictogram.svg";
 import Googleimg from "../Assest/download.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdDarkMode } from "react-icons/md";
 
 const LoginPage = () => {
+  const navigate=useNavigate()
+  
   const [darkMode, setDarkMode] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
@@ -58,6 +60,7 @@ const LoginPage = () => {
       // Add your login logic here
       console.log("Email:", email, "Password:", password);
       alert("Login Successfully");
+      navigate('/dashboard')
     }
   };
 
