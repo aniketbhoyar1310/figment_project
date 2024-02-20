@@ -1,67 +1,88 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
+import AddNotice from "./AddNotice"; // Import the AddNotice component
+
 const Notice = () => {
-    const [activeButton, setActiveButton] = useState("NoticeOrders");
+  const [activeButton, setActiveButton] = useState("NoticeOrders");
+  const [showModal, setShowModal] = useState(false); // State to manage modal visibility
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
+    if (buttonName === "Add Notice") {
+      setShowModal(true); // Show modal when "Add Notice" button is clicked
+    } else {
+      setShowModal(false);
+    }
   };
+
   return (
     <div>
-    <Navbar/>
-    <div>
-    {/* Container for buttons and header */}
-    <div class="flex items-center text-gray-800  px-11 py-1">
-      <a href="#" class="hover:text-blue-500 text-blue-500">
-        Gst Dashboard
-      </a>
-      <span class="mx-2">  </span>
-      <a href="#" class="">
-        Notice and Orders
-      </a>
-    </div>
-    <div className="container mx-auto  px-10 py-1">
-      <div className="relative w-full flex flex-col shadow-sm px-1 py-1 ">
-        <div className="flex flex-wrap items-center p-1">
-          <div className="relative w-full px-2 max-w-full">
-            <div className="flex justify-between items-center ">
-              <div>
-                <button
-                  type="button"
-                  className={`text-gray-500 border focus:ring-3 focus:outline-none font-medium rounded-lg text-sm px-6 py-2.5 text-center me-2 mb-2 ${
-                    activeButton === "NoticeOrders"
-                      ? "bg-blue-500 text-white"
-                      : ""
-                  }`}
-                  onClick={() => handleButtonClick("NoticeOrders")}
-                >
-                  Notice & Orders
-                </button>
-                <button
-                  type="button"
-                  className={`text-gray-500 border focus:ring-3 focus:outline-none font-medium rounded-lg text-sm px-6 py-2.5 text-center me-2 mb-2 ${
-                    activeButton === "MergedNotice"
-                      ? "bg-blue-500 text-white"
-                      : ""
-                  }`}
-                  onClick={() => handleButtonClick("MergedNotice")}
-                >
-                  Merged Notices
-                </button>
-                <div className="mt-3">
-                  <h4 className=" table-header-group text-xl my-2 ">
-                    View Notices and Orders
-                  </h4>
+      <Navbar />
+      <div>
+        {/* Container for buttons and header */}
+        <div class="flex items-center text-gray-800  px-11 py-1">
+          <a href="#" class="hover:text-blue-500 text-blue-500">
+            Gst Dashboard
+          </a>
+          <span class="mx-2">  </span>
+          <a href="#" class="">
+            Notice and Orders
+          </a>
+        </div>
+        <div className="container mx-auto px-10 py-1">
+          <div className="relative w-full flex flex-col shadow-sm px-1 py-1 ">
+            <div className="flex flex-wrap items-center p-1">
+              <div className="relative w-full px-2 max-w-full">
+                <div className="flex justify-between items-center ">
+                  <div>
+                    <button
+                      type="button"
+                      className={`text-gray-500 border focus:ring-3 focus:outline-none font-medium rounded-lg text-sm px-6 py-2.5 text-center me-2 mb-2 ${
+                        activeButton === "NoticeOrders"
+                          ? "bg-blue-500 text-white"
+                          : ""
+                      }`}
+                      onClick={() => handleButtonClick("NoticeOrders")}
+                    >
+                      Notice & Orders
+                    </button>
+                    <button
+                      type="button"
+                      className={`text-gray-500 border focus:ring-3 focus:outline-none font-medium rounded-lg text-sm px-6 py-2.5 text-center me-2 mb-2 ${
+                        activeButton === "MergedNotice"
+                          ? "bg-blue-500 text-white"
+                          : ""
+                      }`}
+                      onClick={() => handleButtonClick("MergedNotice")}
+                    >
+                      Merged Notices
+                    </button>
+                    <div className="mt-3">
+                      <h4 className=" table-header-group text-xl my-2 ">
+                        View Notices and Orders
+                      </h4>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    {/* second conrainer table and dropdown*/}
-
+        {/* Modal for AddNotice component */}
+        {showModal && (
+          <div className="fixed inset-0 z-50 overflow-auto bg-gray-800 bg-opacity-50 flex items-center justify-center">
+            <div className=" relative">
+              <AddNotice />
+              <button  className="m-btn"
+                
+                onClick={() => setShowModal(false)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
     <div className="container mx-auto px-10 py-7 shadow-md">
       <div className="relative w-full flex flex-col shadow-lg">
         <div className="flex items-center px-1 py-1">

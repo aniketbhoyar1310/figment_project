@@ -63,17 +63,17 @@ const AddNotice = () => {
   };
 
   return (
-    <div className="flex justify-center   items-center h-screen">
+    <div className="flex justify-center   items-center">
       <div className="">
         <div className=" flex items-center justify-center text-xl py-3" style={{background:"#f8f8f8"}}>
           <h3>Add Notice</h3>
         </div>
         <div className="py-6  bg-white px-8" style={{ boxShadow: "0 4px 24px 0 rgba(34, 41, 47, .1)" }}>
         <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
 
           {/* Inputs */}
-          <div className="mb-4">
+          <div className="">
             <label
               htmlFor="title"
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -96,7 +96,7 @@ const AddNotice = () => {
 
 
 
-          <div className="mb-4">
+          <div className=" ">
             <label
               htmlFor="title"
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -118,7 +118,7 @@ const AddNotice = () => {
           </div>
 
 
-          <div className="mb-4">
+          <div className="">
             <label
               htmlFor="refnotice"
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -138,7 +138,7 @@ const AddNotice = () => {
           </div>
 
 
-          <div className="mb-4 relative">
+          <div className="relative">
             <label
               htmlFor="dateChaned"
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -156,7 +156,7 @@ const AddNotice = () => {
               className="transition ease-in-out  shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
             {showIssueCalendar && (
-              <div className="absolute top-full left-0 z-10 ">
+              <div className="absolute z-10  issuecal" >
                 <Calendar
                   onChange={handleIssueCalendarChange}
                   value={
@@ -190,8 +190,8 @@ const AddNotice = () => {
               </div>
             )}
           </div>
-          {/* Select */}we
-          <div className="mb-4">
+          {/* Select */}
+          <div className="">
             <label
               htmlFor="refnotice"
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -210,7 +210,7 @@ const AddNotice = () => {
             </select>
           </div>
 
-          <div className="mb-4 relative">
+          <div className=" relative">
             <label
               htmlFor="dueDate"
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -228,7 +228,7 @@ const AddNotice = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
             {showDueCalendar && (
-              <div className="absolute top-full left-0 z-10">
+              <div className="absolute z-10 duedate">
                 <Calendar
                   onChange={handleDueCalendarChange}
                   value={
@@ -261,7 +261,7 @@ const AddNotice = () => {
             )}
           </div>
           {/* Optional value */}
-          <div className="mb-4">
+          <div className="">
             <label
               htmlFor="Issued"
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -283,7 +283,7 @@ const AddNotice = () => {
         
          
 
-          <div className=" mb-4 relative ">
+          <div className="  relative ">
           <label
               htmlFor="dueDate"
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -301,7 +301,7 @@ const AddNotice = () => {
             />
           </div>
 
-          <div className=" mb-4 relative ">
+          <div className=" relative ">
           <label
               htmlFor="file"
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -320,7 +320,7 @@ const AddNotice = () => {
             />
           </div>
 
-          <div className="mb-4">
+          <div className="">
             <label
               htmlFor="content"
               className="block text-gray-700 text-sm font-bold mb-2"

@@ -119,7 +119,7 @@ const SignUpPage = () => {
               <input
                 placeholder="  Company name"
                 type="text"
-                name="companyName"
+                name="company Name"
                 id="companyName"
                 autoComplete="organization"
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
@@ -177,7 +177,7 @@ const SignUpPage = () => {
               <input
                 placeholder="Confirm Password"
                 type="password"
-                name="confirmPassword"
+                name="confirm Password"
                 id="confirmPassword"
                 autoComplete="new-password"
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
@@ -222,7 +222,7 @@ const SignUpPage = () => {
               <input
                 placeholder="Mobile Number"
                 type="text"
-                name="mobileNumber"
+                name="mobile Number"
                 id="mobileNumber"
                 autoComplete=""
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"

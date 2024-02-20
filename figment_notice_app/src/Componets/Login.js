@@ -138,7 +138,7 @@ const LoginPage = () => {
           <img
             src={figmetLogo}
             alt="Login Image"
-            className="w-28 mb-8 m-auto "
+            className="w-28 mx-auto mb-4"
           />
 
           <form onSubmit={handleSubmit} className="space-y-4">

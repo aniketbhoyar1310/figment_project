@@ -11,8 +11,8 @@ const MyCalendar = () => {
 
   return (
     <div>
-      <h1>My Calendar</h1>
-      <Calendar
+      
+      <Calendar className="mycal"
         onChange={onChange}
         value={date}
       />

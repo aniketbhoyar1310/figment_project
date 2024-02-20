@@ -5,9 +5,14 @@ body{
     font-family: 'Lato', 'sans-serif';
 }
 input::placeholder{
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 12px;
+  
  text-transform: capitalize;
+ letter-spacing: 1.3px;
+ font-family: "Lato", sans-serif;
+ font-weight: 400;
+ font-style: normal;
+
 }
 label{
   text-transform: capitalize;
@@ -17,3 +22,41 @@ label{
    padding-left: 10px;
     transition: 0.3s ease-in;
 } */
+
+.m-btn{
+  position: absolute;
+  top: 1%;
+ 
+  left: 95%;
+
+}  
+
+.issuecal{
+  top: 114%;
+  left: -2%;
+
+}
+.issuecal .react-calendar{
+  max-width: 90%;
+
+line-height: 0.600rem;
+
+
+}
+.duedate{
+ top: 112%;
+ left: 0%;
+}
+.duedate .react-calendar{
+  max-width: 90%;
+
+  line-height: 0.600rem;
+}
+.navad{
+  letter-spacing: 1.3px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
