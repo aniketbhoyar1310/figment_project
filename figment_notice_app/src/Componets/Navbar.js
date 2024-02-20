@@ -57,7 +57,7 @@ const location = useLocation()
                       key={item.name}
                       to={item.to}
                       className={classNames(
-                    location.pathname===    item.to ? 'border-b-4 border-[rgb(77,140,255)] text-[rgb(77,140,255)]' : 'text-gray-500  delay-200  hover:text-[',
+                    location.pathname===    item.to ? 'border-b-2 border-[rgb(77,140,255)] text-[rgb(77,140,255)]' : 'text-gray-500  delay-200  hover:text-[',
                         ' px-3 py-2 text-sm font-medium'
                       )}
                       aria-current={item.current ? 'true' : undefined}

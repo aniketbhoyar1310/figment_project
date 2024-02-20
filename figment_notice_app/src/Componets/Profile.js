@@ -160,9 +160,9 @@ const Profile = () => {
                           <div className="mt-2 col-sm-12">
                             <button
                               type="button"
-                              className="me-1 px-2 rounded-md bg-red-600 text-white py-1"
+                              className="me-1 px-2 rounded-md  text-base font-medium text-red-500 py-1"
                             >
-                              Back
+                              Cancle
                             </button>
                             <button
                               type="submit"
