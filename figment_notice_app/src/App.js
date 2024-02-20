@@ -10,6 +10,8 @@ import Dashboard from "./Componets/Dashboard"
 import AllUsers from "./Componets/AllUsers"
 import Notice from "./Componets/Notice";
 import Submission from "./Componets/Submission";
+import Profile from "./Componets/Profile";
+import ChangePassword from "./Componets/ChangePassword";
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
           <Route path="/allusers" element={<AllUsers/>}/>
           <Route path="/notice" element={<Notice/>}/>
           <Route path="/submission" element={<Submission/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/changepassword" element={<ChangePassword/>}/>
         </Routes>
       </BrowserRouter> 
     </>

@@ -11,8 +11,7 @@ const MyCalendar = () => {
 
   return (
     <div>
-      <h1>My Calendar</h1>
-      <Calendar
+      <Calendar className={'border-none shadow rounded-md p-2'}
         onChange={onChange}
         value={date}
       />

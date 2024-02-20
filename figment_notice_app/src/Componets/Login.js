@@ -80,7 +80,7 @@ const LoginPage = () => {
     >
       {/* Content Side */}
       <div
-        className="flex flex-col   px-6  pb-6"
+        className="flex flex-col   px-6  pb-6 "
         style={{ boxShadow: "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px" }}
       >
         <img src={loginImage} alt="Notice Image" className="w-96  rounded-lg" />
@@ -138,7 +138,7 @@ const LoginPage = () => {
           <img
             src={figmetLogo}
             alt="Login Image"
-            className="w-28 mb-8 m-auto "
+            className="w-28 mb-8 m-auto"
           />
 
           <form onSubmit={handleSubmit} className="space-y-4">

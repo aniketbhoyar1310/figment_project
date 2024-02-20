@@ -3,15 +3,16 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import './Nav.css'
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 const navigation = [
   { name: 'Product', to: '#', current: false },
-  { name: 'Dashboard', to: '/dashboard', current: true },
+  { name: 'Dashboard', to: '/dashboard', current: false },
   { name: 'Notice', to: '/notice', current: false },
   { name: 'Submission', to: '/submission', current: false },
   { name: 'All Users', to: '/allusers', current: false },
 ]
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -19,7 +20,10 @@ function classNames(...classes) {
 
 
 
+
 const Navbar = () => {
+const location = useLocation()
+
   return (
     <Disclosure as="nav" className=" text-black shadow sticky top-0 z-50 backdrop-filter backdrop-blur-lg bg-opacity-30">
     {({ open }) => (
@@ -49,17 +53,18 @@ const Navbar = () => {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
-                    <Link
+                    <NavLink
                       key={item.name}
                       to={item.to}
                       className={classNames(
-                        item.current ? 'border-b-4 border-[rgb(77,140,255)] text-black' : 'text-gray-500  delay-200  hover:text-black',
+                    location.pathname===    item.to ? 'border-b-4 border-[rgb(77,140,255)] text-[rgb(77,140,255)]' : 'text-gray-500  delay-200  hover:text-[',
                         ' px-3 py-2 text-sm font-medium'
                       )}
-                      aria-current={item.current ? 'page' : undefined}
+                      aria-current={item.current ? 'true' : undefined}
+                      exact={true}
                     >
                       {item.name}
-                    </Link>
+                    </NavLink>
                   ))}
                 </div>
               </div>
@@ -91,32 +96,23 @@ const Navbar = () => {
                   <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <Menu.Item>
                       {({ active }) => (
-                        <a
-                          href="#"
-                          className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                        <Link
+                          to="/profile"
+                          className={classNames(active ? 'bg-gray-100 ' : '', 'block px-4 py-2 text-sm text-gray-700')}
                         >
-                          Your Profile
-                        </a>
+                          Profile
+                        </Link>
                       )}
                     </Menu.Item>
+                  
                     <Menu.Item>
                       {({ active }) => (
-                        <a
-                          href="#"
+                        <Link
+                          to="/"
                           className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                         >
-                          Settings
-                        </a>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="#"
-                          className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                        >
-                          Sign out
-                        </a>
+                          Log out
+                        </Link>
                       )}
                     </Menu.Item>
                   </Menu.Items>
@@ -125,7 +121,6 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-
         <Disclosure.Panel className="sm:hidden">
           <div className="space-y-1 px-2 pb-3 pt-2">
             {navigation.map((item) => (

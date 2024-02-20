@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 import Card from './Card'
 import Calender from './Calender';
 import DashboardFooter from './DashboardFooter';
+import Profile from './Profile';
 
 const Dashboard = () => {
 

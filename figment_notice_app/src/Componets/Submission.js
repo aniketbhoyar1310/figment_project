@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
 const Submission = () => {
     const [activeButton, setActiveButton] = useState("NoticeOrders");
@@ -18,13 +19,43 @@ const Submission = () => {
     <div>
         <Navbar/>
     {/* Container for buttons and header */}
-    <div className="flex items-center text-gray-800 px-11 py-1">
-      <a href="#" className="hover:text-blue-500 text-blue-500">
-        Gst Dashboard
-      </a>
-      <span className="mx-2">  </span>
-      <a href="#">Submission</a>
-    </div>
+    <nav className="flex px-4 mt-3" aria-label="Breadcrumb ">
+          <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <li className="inline-flex items-center">
+              <Link
+                to="/dashboard"
+                className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 "
+              >
+                Dashboard
+              </Link>
+            </li>
+            <li>
+              <div className="flex items-center">
+                <svg
+                  className="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 6 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 9 4-4-4-4"
+                  />
+                </svg>
+                <Link
+                  href="#"
+                  className="ms-1 text-sm font-medium hover:text-black md:ms-2 text-[rgb(77,140,255)] "
+                >
+                  Submission
+                </Link>
+              </div>
+            </li>
+          </ol>
+        </nav>
 
     {/* Second container for table and dropdowns */}
     <div className="container mx-auto px-10 py-7 shadow-md ">
