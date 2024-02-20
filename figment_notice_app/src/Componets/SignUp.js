@@ -255,7 +255,7 @@ const SignUpPage = () => {
           {/* Google and Microsoft Sign-in Options */}
           <div className="flex justify-center gap-4 mt-4">
             <button className=" flex items-center justify-center gap-2 px-2 py-2 border border-gray-300 text-gray-800">
-              <img src={Googleimg} />
+              <img alt="img" src={Googleimg} />
               Sign in with Google
             </button>
             <button className="flex items-center justify-center gap-2 px-2 py-2 border border-gray-300 text-gray-800">

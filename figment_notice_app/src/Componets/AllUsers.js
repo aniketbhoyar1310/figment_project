@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import Navbar from "./Navbar";
-
+import { Link } from "react-router-dom";
 const AllUsers = () => {
   const [showModal, setShowModal] = React.useState(false);
 
@@ -13,12 +13,12 @@ const AllUsers = () => {
         <nav className="flex" aria-label="Breadcrumb ">
           <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
             <li className="inline-flex items-center">
-              <a
-                href="#"
+              <Link
+                to="/dashboard"
                 className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 "
               >
                 Dashboard
-              </a>
+              </Link>
             </li>
             <li>
               <div className="flex items-center">
@@ -39,9 +39,9 @@ const AllUsers = () => {
                 </svg>
                 <a
                   href="#"
-                  className="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 "
+                  className="ms-1 text-sm font-medium hover:text-black md:ms-2 text-[rgb(77,140,255)] "
                 >
-                  AllUsers
+                  All Users
                 </a>
               </div>
             </li>
@@ -51,7 +51,7 @@ const AllUsers = () => {
       <div className="add_user_button px-4">
         <div>
           <button
-            className="bg-[rgb(77,140,255)] text-white   text-sm px-2 py-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            className=" bg-[rgb(77,140,255)] text-white   text-sm px-2 py-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
             type="button"
             onClick={() => setShowModal(true)}
           >
@@ -64,7 +64,7 @@ const AllUsers = () => {
                   {/*content*/}
                   <div className="border-0 rounded-sm shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                     {/*header*/}
-<p className="text-center my-2 font-bold">Add User</p>
+<p className="text-center my-2 font-bold text-[rgb(77,140,255)]">Add User</p>
                     {/*body*/}
                     <div className="relative p-6 flex-auto">
                       <form className=" pt-50">
@@ -284,14 +284,14 @@ const AllUsers = () => {
                     {/*footer*/}
                     <div className="flex items-center justify-end px-1 border-t border-solid border-blueGray-200 rounded-b">
                       <button
-                        className="text-[rgb(77,140,255)] background-transparent uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        className="text-danger background-transparent uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                         type="button"
                         onClick={() => setShowModal(false)}
                       >
                         Close
                       </button>
                       <button
-                        className="bg-[rgb(77,140,255)] text-white   uppercase text-sm px-6 py-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        className="bg-green-500 text-white   uppercase text-sm px-6 py-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                         type="button"
                         onClick={() => setShowModal(false)}
                       >
@@ -305,9 +305,14 @@ const AllUsers = () => {
             </div>
           ) : null}
         </div>
+
       </div>
+
     </div>
+    <p className="text-center text-danger font-bold">No User Added Yet !</p>
+
     </div>
+    
   );
 };
 
