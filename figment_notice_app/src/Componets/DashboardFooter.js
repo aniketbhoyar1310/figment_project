@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import AddAssess from "./AddAssess";
 
 const DashboardFooter = () => {
   return (
@@ -8,35 +9,35 @@ const DashboardFooter = () => {
           <div className="invoice-list-wrapper ">
             <div className="gst-dashboard-company-list-height card px-3 py-2 shadow">
               <div className="invoice-list-table-header px-2 w-100 py-1">
-                <div className="row py-2 px-1 bg-sky-50 rounded-lg">
+                <div className="row py-2.5 px-1 bg-sky-50 rounded-lg">
                   <div className="align-items-center col">
                     <span id="addCompany" style={{ cursor: "default" }}>
                       <button 
                         type="button"
-                        className="bg-white me-1 btn btn-outline-secondary"
+                        className="bg-white me-1 rounded-sm px-1 outline outline-1 outline-offset-2"
                       >
-                        Add Company
+                        <AddAssess />
                       </button>
                     </span>
                     <span id="importCompany" style={{ cursor: "default" }}>
                       <button
                         type="button"
-                        className="bg-white me-1 my-1 btn btn-outline-secondary"
+                        className="bg-white mx-3 my-1  rounded-sm px-1 outline outline-1 outline-offset-2"
                       >
                         Import Company
                       </button>
                     </span>
-                    <span id="downloadTemplate" >
+                    <span id="downloadTemplate">
                       <button
                         type="button"
-                        className="bg-white me-1 my-1 btn btn-outline-secondary"
+                        className="bg-white  me-2 my-1  rounded-sm px-1 outline outline-1 outline-offset-2"
                       >
                         Download Template
                       </button>
                     </span>
                     <button
                       type="button"
-                      className="bg-white me-1 my-1 float-end btn btn-outline-secondary"
+                      className="bg-white me-1 float-end my-1  rounded-sm px-1 outline outline-1 outline-offset-2"
                     >
                       Sync All
                     </button>
@@ -64,7 +65,6 @@ const DashboardFooter = () => {
                           >
                             Nick Mark
                           </a>{" "}
-                          
                           <a
                             className="font-medium text-black dark:text-gray-50 dark:hover:text-gray-100"
                             href="#0"
@@ -72,7 +72,6 @@ const DashboardFooter = () => {
                           >
                             Sara Smith
                           </a>{" "}
-                          
                         </div>
                         <div className="flex-shrink-0 ml-2">
                           <a
@@ -166,14 +165,14 @@ const DashboardFooter = () => {
         </div>
         <div className="col-lg-5 col-md-12 col-sm-12 my-md-2 bg-white rounded-md  card shadow">
           <div className="my-2 bg-sky-50 rounded-md ">
-            <div className="row px-2 py-3">
+            <div className="row px-2 py-2.5">
               <div className="col-4">
-                <button className="bg-white p-1 px-2 rounded-md btn btn-outline-secondary">
+                <button className="bg-white my-1  rounded-sm px-1 outline outline-1 outline-offset-2">
                   Notices & Orders
                 </button>
               </div>
               <div className="col-4">
-                <button className="bg-white p-1 px-2 rounded-md btn btn-outline-secondary">
+                <button className="bg-white my-1  rounded-sm px-1 outline outline-1 outline-offset-2">
                   Summision
                 </button>
               </div>
