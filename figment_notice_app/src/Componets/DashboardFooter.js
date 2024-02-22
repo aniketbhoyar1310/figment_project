@@ -59,18 +59,18 @@ const DashboardFooter = () => {
                       <div className="flex-grow flex justify-between items-center">
                         <div className="self-center">
                           <a
-                            className="font-medium text-black hover:text-gray-900 dark:text-white"
+                            className="font-medium hover:text-gray-900  dark:text-white"
                             href="#0"
-                            style={{ outline: "none" }}
+                          
                           >
                             Nick Mark
                           </a>{" "}
                           <a
-                            className="font-medium text-black dark:text-white"
+                            className="font-medium dark:text-white"
                             href="#0"
-                            style={{ outline: "none" }}
+                        
                           >
-                            Sara Smith
+                            <span className=" dark:text-white">Sara Smith</span>
                           </a>{" "}
                         </div>
                         <div className="flex-shrink-0 ml-2">
@@ -116,17 +116,131 @@ const DashboardFooter = () => {
                           <a
                             className="font-medium dark:text-white"
                             href="#0"
-                            style={{ outline: "none" }}
+                            
                           >
                             Post Name
                           </a>{" "}
-                          was removed by{" "}
+                          <span className="dark:text-white">was removed by</span>{""}
                           <a
-                            className="font-medium text-black hover:text-gray-900 dark:text-gray-50 dark:hover:text-gray-100"
+                            className="font-medium hover:text-gray-900 dark:text-white dark:hover:text-gray-100"
+                            href="#0"
+                            
+                          >
+                           {""} Nick Mark
+                          </a>
+                        </div>
+                        <div className="flex-shrink-0 ml-2">
+                          <a
+                            className="flex items-center font-medium text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
                             href="#0"
                             style={{ outline: "none" }}
                           >
-                            Nick Mark
+                            View
+                            <span>
+                              <svg
+                                width={20}
+                                height={20}
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                className="transform transition-transform duration-500 ease-in-out"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li className="flex px-4">
+                    <div className="w-9 h-9 rounded-full flex-shrink-0 bg-[rgb(77,140,255)] my-2 mr-3">
+                      <svg
+                        className="w-9 h-9 fill-current text-red-50"
+                        viewBox="0 0 36 36"
+                      >
+                        <path d="M25 24H11a1 1 0 01-1-1v-5h2v4h12v-4h2v5a1 1 0 01-1 1zM14 13h8v2h-8z" />
+                      </svg>
+                    </div>
+                    <div className="flex-grow flex items-center border-gray-100 text-sm text-black dark:text-gray-50 py-2">
+                      <div className="flex-grow flex justify-between items-center">
+                        <div className="self-center ">
+                         
+                          <a
+                            className="font-medium dark:text-white"
+                            href="#0"
+                            
+                          >
+                            Post Name
+                          </a>{" "}
+                          <span className="dark:text-white">was removed by</span>{""}
+                          <a
+                            className="font-medium hover:text-gray-900 dark:text-white dark:hover:text-gray-100"
+                            href="#0"
+                            
+                          >
+                           {""} Nick Mark
+                          </a>
+                        </div>
+                        <div className="flex-shrink-0 ml-2">
+                          <a
+                            className="flex items-center font-medium text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500"
+                            href="#0"
+                            style={{ outline: "none" }}
+                          >
+                            View
+                            <span>
+                              <svg
+                                width={20}
+                                height={20}
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                className="transform transition-transform duration-500 ease-in-out"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li className="flex px-4">
+                    <div className="w-9 h-9 rounded-full flex-shrink-0 bg-[rgb(77,140,255)] my-2 mr-3">
+                      <svg
+                        className="w-9 h-9 fill-current text-red-50"
+                        viewBox="0 0 36 36"
+                      >
+                        <path d="M25 24H11a1 1 0 01-1-1v-5h2v4h12v-4h2v5a1 1 0 01-1 1zM14 13h8v2h-8z" />
+                      </svg>
+                    </div>
+                    <div className="flex-grow flex items-center border-gray-100 text-sm text-black dark:text-gray-50 py-2">
+                      <div className="flex-grow flex justify-between items-center">
+                        <div className="self-center ">
+                         
+                          <a
+                            className="font-medium dark:text-white"
+                            href="#0"
+                            
+                          >
+                            Post Name
+                          </a>{" "}
+                          <span className="dark:text-white">was removed by</span>{""}
+                          <a
+                            className="font-medium hover:text-gray-900 dark:text-white dark:hover:text-gray-100"
+                            href="#0"
+                            
+                          >
+                           {""} Nick Mark
                           </a>
                         </div>
                         <div className="flex-shrink-0 ml-2">
@@ -167,7 +281,7 @@ const DashboardFooter = () => {
           <div className="my-2 bg-sky-50 dark:bg-gray-900 rounded-md ">
             <div className="row px-2 py-2.5">
               <div className="col-4">
-                <button className="bg-white my-1  rounded-sm px-1 outline outline-1 outline-offset-2">
+                <button className="bg-white my-1  rounded-sm px-1 outline outline-1 outline-offset-2 ">
                   Notices & Orders
                 </button>
               </div>
@@ -179,7 +293,7 @@ const DashboardFooter = () => {
             </div>
           </div>
           <div className="">
-            <div className="flex items-center text-sm my-3 dark: text-white">
+            <div className="flex items-center text-sm my-3 gap-2 dark: text-white">
               <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                 <img
                   className="object-cover w-full h-full rounded-full"
