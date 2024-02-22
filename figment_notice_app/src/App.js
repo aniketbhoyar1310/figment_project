@@ -12,25 +12,28 @@ import Notice from "./Componets/Notice";
 import Submission from "./Componets/Submission";
 import Profile from "./Componets/Profile";
 import ChangePassword from "./Componets/ChangePassword";
+import { ThemeProvider } from "./Context/ThemeContext";
 
 const App = () => {
   return (
     <>
+     <ThemeProvider>
      <BrowserRouter>
    
-        <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/calender" element={<MyCalendar/>}/>
-          <Route path="/addnotice" element={<AddNotice/>}/>
-          <Route path="/dashboard" element={<Dashboard/>}/>
-          <Route path="/allusers" element={<AllUsers/>}/>
-          <Route path="/notice" element={<Notice/>}/>
-          <Route path="/submission" element={<Submission/>}/>
-          <Route path="/profile" element={<Profile/>}/>
-          <Route path="/changepassword" element={<ChangePassword/>}/>
-        </Routes>
-      </BrowserRouter> 
+   <Routes>
+     <Route path="/" element={<LoginPage />} />
+     <Route path="/signup" element={<SignUp />} />
+     <Route path="/calender" element={<MyCalendar/>}/>
+     <Route path="/addnotice" element={<AddNotice/>}/>
+     <Route path="/dashboard" element={<Dashboard/>}/>
+     <Route path="/allusers" element={<AllUsers/>}/>
+     <Route path="/notice" element={<Notice/>}/>
+     <Route path="/submission" element={<Submission/>}/>
+     <Route path="/profile" element={<Profile/>}/>
+     <Route path="/changepassword" element={<ChangePassword/>}/>
+   </Routes>
+ </BrowserRouter> 
+     </ThemeProvider>
     </>
   );
 };

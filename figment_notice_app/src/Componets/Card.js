@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = () => {
   return (
-    <div class=" box bg-white  rounded-lg shadow transition-all hover:scale-110 duration-700">
+    <div class=" box bg-white  rounded-lg shadow transition-all hover:scale-110 duration-700 dark:bg-black">
       <div class="flex px-3 pt-2 ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
