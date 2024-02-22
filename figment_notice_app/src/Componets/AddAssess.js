@@ -9,7 +9,9 @@ const AddAssess = () => {
 
   return (
     <div className="">
-      <button onClick={() => setOpen(true)}>Add Assessee</button>
+      <button onClick={() => setOpen(true)} className="  ">
+        Add Assessee
+      </button>
       {/* Button to open modal */}
       {/* Modal */}
       <Transition.Root show={open} as={Fragment}>
@@ -47,7 +49,7 @@ const AddAssess = () => {
                     <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                       <Dialog.Title
                         as="h3"
-                        className="text-lg leading-6 font-medium text-gray-900"
+                        className="text-lg leading-6 font-medium text-gray-900  "
                       >
                         Add Assessee
                       </Dialog.Title>
@@ -78,7 +80,6 @@ const AddAssess = () => {
                                     className="form-control my-2 focus:outline-none focus:ring-0  focus:border-blue-500"
                                     defaultValue=""
                                   />
-                                  
                                 </div>
                               </div>
                               <div className="text-center mt-2  col-12">
@@ -97,10 +98,9 @@ const AddAssess = () => {
                   </div>
                 </div>
                 <div className=" px-4 py-1 sm:px-6 sm:flex sm:flex-row-reverse">
-                  
                   <button
                     type="button"
-                    className="my-2 w-full inline-flex justify-center rounded-md  px-4 py-1 text-base font-medium text-red-500  focus:outline-none  sm:mt-0 sm:w-auto sm:text-sm"
+                    className="my-2 w-full inline-flex justify-center rounded-md  px-4 py-1 text-base font-medium text-red-500  focus:outline-none  sm:mt-0 sm:w-auto sm:text-sm "
                     onClick={() => setOpen(false)}
                     ref={cancelButtonRef}
                   >

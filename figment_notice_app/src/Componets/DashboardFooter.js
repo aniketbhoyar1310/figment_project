@@ -3,18 +3,18 @@ import AddAssess from "./AddAssess";
 
 const DashboardFooter = () => {
   return (
-    <div className="container-fluid py-2 bg-sky-50 ">
+    <div className="container-fluid py-2 bg-sky-50 dark:bg-gray-900 ">
       <div className="row px-2">
         <div className="col-lg-7 col-md-12 col-sm-12 my-2">
           <div className="invoice-list-wrapper ">
-            <div className="gst-dashboard-company-list-height card px-3 py-2 shadow">
+            <div className="gst-dashboard-company-list-height card px-3 py-2 shadow dark:bg-gray-800">
               <div className="invoice-list-table-header px-2 w-100 py-1">
-                <div className="row py-2.5 px-1 bg-sky-50 rounded-lg">
+                <div className="row py-2.5 px-1 bg-sky-50 rounded-lg  dark:bg-gray-900">
                   <div className="align-items-center col">
                     <span id="addCompany" style={{ cursor: "default" }}>
                       <button 
                         type="button"
-                        className="bg-white me-1 rounded-sm px-1 outline outline-1 outline-offset-2"
+                        className="bg-white me-1 rounded-sm px-1 outline outline-1 outline-offset-2  "
                       >
                         <AddAssess />
                       </button>
@@ -59,14 +59,14 @@ const DashboardFooter = () => {
                       <div className="flex-grow flex justify-between items-center">
                         <div className="self-center">
                           <a
-                            className="font-medium text-black hover:text-gray-900 dark:text-gray-50 dark:hover:text-gray-100"
+                            className="font-medium text-black hover:text-gray-900 dark:text-white"
                             href="#0"
                             style={{ outline: "none" }}
                           >
                             Nick Mark
                           </a>{" "}
                           <a
-                            className="font-medium text-black dark:text-gray-50 dark:hover:text-gray-100"
+                            className="font-medium text-black dark:text-white"
                             href="#0"
                             style={{ outline: "none" }}
                           >
@@ -111,10 +111,10 @@ const DashboardFooter = () => {
                     </div>
                     <div className="flex-grow flex items-center border-gray-100 text-sm text-black dark:text-gray-50 py-2">
                       <div className="flex-grow flex justify-between items-center">
-                        <div className="self-center">
-                          The post{" "}
+                        <div className="self-center ">
+                         
                           <a
-                            className="font-medium text-black dark:text-gray-50 dark:hover:text-gray-100"
+                            className="font-medium dark:text-white"
                             href="#0"
                             style={{ outline: "none" }}
                           >
@@ -163,8 +163,8 @@ const DashboardFooter = () => {
             </div>
           </div>
         </div>
-        <div className="col-lg-5 col-md-12 col-sm-12 my-md-2 bg-white rounded-md  card shadow">
-          <div className="my-2 bg-sky-50 rounded-md ">
+        <div className="col-lg-5 col-md-12 col-sm-12 my-md-2  dark:bg-gray-800 rounded-md  card shadow">
+          <div className="my-2 bg-sky-50 dark:bg-gray-900 rounded-md ">
             <div className="row px-2 py-2.5">
               <div className="col-4">
                 <button className="bg-white my-1  rounded-sm px-1 outline outline-1 outline-offset-2">
@@ -179,7 +179,7 @@ const DashboardFooter = () => {
             </div>
           </div>
           <div className="">
-            <div className="flex items-center text-sm my-3">
+            <div className="flex items-center text-sm my-3 dark: text-white">
               <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                 <img
                   className="object-cover w-full h-full rounded-full"
@@ -194,7 +194,7 @@ const DashboardFooter = () => {
               </div>
               <div>
                 <p className="font-semibold">Hans Burger</p>
-                <p className="text-xs text-gray-600 dark:text-gray-400 ">
+                <p className="text-xs text-gray-600 dark:text-gray-200 ">
                   10x Developer
                 </p>
               </div>
@@ -202,7 +202,30 @@ const DashboardFooter = () => {
                 <p>In publishing and graphic desigs available lishing .</p>
               </div>
             </div>
-            <div className="flex items-center text-sm my-3">
+            <div className="flex items-center text-sm my-3  dark: text-white">
+              <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
+                <img
+                  className="object-cover w-full h-full rounded-full"
+                  src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                  alt=""
+                  loading="lazy"
+                />
+                <div
+                  className="absolute inset-0 rounded-full shadow-inner"
+                  aria-hidden="true"
+                />
+              </div>
+              <div>
+                <p className="font-semibold" >Hans Burger</p>
+                <p className="text-xs text-gray-600 dark:text-gray-200 ">
+                  10x Developer
+                </p>
+              </div>
+              <div className="text px-2">
+                <p>In publishing and graphic desigs available lishing .</p>
+              </div>
+            </div>
+            <div className="flex items-center text-sm my-3  dark: text-white">
               <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                 <img
                   className="object-cover w-full h-full rounded-full"
@@ -217,7 +240,7 @@ const DashboardFooter = () => {
               </div>
               <div>
                 <p className="font-semibold">Hans Burger</p>
-                <p className="text-xs text-gray-600 dark:text-gray-400 ">
+                <p className="text-xs text-gray-600 dark:text-gray-200 ">
                   10x Developer
                 </p>
               </div>
@@ -225,30 +248,7 @@ const DashboardFooter = () => {
                 <p>In publishing and graphic desigs available lishing .</p>
               </div>
             </div>
-            <div className="flex items-center text-sm my-3">
-              <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                <img
-                  className="object-cover w-full h-full rounded-full"
-                  src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                  alt=""
-                  loading="lazy"
-                />
-                <div
-                  className="absolute inset-0 rounded-full shadow-inner"
-                  aria-hidden="true"
-                />
-              </div>
-              <div>
-                <p className="font-semibold">Hans Burger</p>
-                <p className="text-xs text-gray-600 dark:text-gray-400 ">
-                  10x Developer
-                </p>
-              </div>
-              <div className="text px-2">
-                <p>In publishing and graphic desigs available lishing .</p>
-              </div>
-            </div>
-            <div className="flex items-center text-sm my-3">
+            <div className="flex items-center text-sm my-3  dark: text-white">
               <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                 <img
                   className="object-cover w-full h-full rounded-full"
