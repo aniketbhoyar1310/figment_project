@@ -1,12 +1,10 @@
 import React, { useRef, useState } from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
-
 const Submission = () => {
   const [activeButton, setActiveButton] = useState("NoticeOrders");
   const startDateRef = useRef(null);
   const endDateRef = useRef(null);
-
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
     // Clear the date inputs
@@ -57,9 +55,7 @@ const Submission = () => {
             </li>
           </ol>
         </nav>
-
         {/* second conrainer table and dropdown*/}
-
         <div className="container mx-auto px-10 py-7  ">
           <div className="relative w-full flex flex-col shadow-lg rounded-md">
             <div className="flex items-center px-1 py-1">
@@ -86,7 +82,6 @@ const Submission = () => {
                       <option value="CS">Refund</option>
                     </select>
                   </div>
-
                   {/* Third dropdown */}
                   <div className="flex-none">
                     <label
@@ -108,7 +103,6 @@ const Submission = () => {
                       <option value="CS">Cutom Selection </option>
                     </select>
                   </div>
-
                   <div className="flex items-center space-x-8">
                     <div class="mb-7">
                       <label
@@ -150,9 +144,7 @@ const Submission = () => {
                     <button
                       type="button"
                       className={`ms-5 text-green-500 bg-white border focus:ring-3 py-1.5  font-medium  text-sm   text-center  mb-2 me-1 rounded-md px-3 outline-offset-2 ${
-                        activeButton === "Export to Excel"
-                          ? " "
-                          : ""
+                        activeButton === "Export to Excel" ? " " : ""
                       }`}
                       onClick={() => handleButtonClick("Export to Excel")}
                     >
@@ -164,7 +156,9 @@ const Submission = () => {
             </div>
             <div className="flex px-3 justify-between">
               <div className="">
-           <p className="my-2 ms-1 text-red-500 text-center">There are no records to display</p>
+                <p className="my-2 ms-1 text-red-500 text-center">
+                  There are no records to display
+                </p>
               </div>
             </div>
           </div>
@@ -173,5 +167,4 @@ const Submission = () => {
     </div>
   );
 };
-
 export default Submission;
