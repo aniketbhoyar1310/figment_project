@@ -6,7 +6,7 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 import { FaRegUserCircle } from "react-icons/fa";
 import './Nav.css'
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import Switcher from './Switcher';
+import Switcher from './Switcher'; ///changes
 
 const navigation = [
   { name: 'Product', to: '#', current: false },
