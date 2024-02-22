@@ -19,7 +19,6 @@ const App = () => {
     <>
      <ThemeProvider>
      <BrowserRouter>
-   
    <Routes>
      <Route path="/" element={<LoginPage />} />
      <Route path="/signup" element={<SignUp />} />

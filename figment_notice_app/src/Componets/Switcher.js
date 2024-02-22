@@ -8,7 +8,7 @@ const Switcher = () => {
 
   return (
     
-    <div className="">
+    <div className="float-start">
         <button
           className={`p-1 rounded-full ${
             isDarkMode ? "bg-white text-gray-800" : "bg-gray-800 text-white"

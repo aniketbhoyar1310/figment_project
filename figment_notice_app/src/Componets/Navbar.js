@@ -14,7 +14,6 @@ const navigation = [
   { name: 'E-Proceeding', to: '/notice', current: false },
   { name: 'ITR Filed Form', to: '/submission', current: false },
   { name: 'All Users', to: '/allusers', current: false },
-  { name: <Switcher/> },
 ]
 
 
@@ -22,16 +21,13 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-
-
-
 const Navbar = () => {
 const location = useLocation()
 
   return (
     <Disclosure as="nav" className=" text-black shadow sticky top-0 z-50 backdrop-filter backdrop-blur-lg bg-opacity-30">
     {({ open }) => (
-      <>
+      <div>
       
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
@@ -68,18 +64,15 @@ const location = useLocation()
                       aria-current={item.current ? 'true' : undefined}
                       exact={true}
                     >
-                      
                       {item.name}
-                      
                     </NavLink>
-                 
                   ))}
+                  
                 </div>
                 
               </div>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              {/* Profile dropdown */}
               <Menu as="div" className="relative ml-3">
                 
                 <div>
@@ -154,7 +147,7 @@ const location = useLocation()
         </Disclosure.Panel>
        
       
-      </>
+      </div>
     )}
   </Disclosure>
   )
