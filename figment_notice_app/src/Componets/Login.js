@@ -3,24 +3,21 @@ import loginImage from "../Assest/Mobile login-amico.png";
 import figmetLogo from "../Assest/Figment-Logo-1.png";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { BsArrowRightCircleFill } from "react-icons/bs";
-import { CiLight } from "react-icons/ci";
+
 import msinfo from "../Assest/ms-pictogram.svg";
 import Googleimg from "../Assest/download.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { MdDarkMode } from "react-icons/md";
+import { useTheme } from "../Context/ThemeContext";
+import Switcher from "./Switcher";
 
 const LoginPage = () => {
-  const navigate=useNavigate()
-  
-  const [darkMode, setDarkMode] = useState(false);
+  const navigate = useNavigate();
+  const { toggleTheme, isDarkMode } = useTheme();
+
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: "", password: "" });
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -60,7 +57,7 @@ const LoginPage = () => {
       // Add your login logic here
       console.log("Email:", email, "Password:", password);
       alert("Login Successfully");
-      navigate('/dashboard')
+      navigate("/dashboard");
     }
   };
 
@@ -75,12 +72,12 @@ const LoginPage = () => {
   return (
     <div
       className={`flex relative transition-all duration-500 ease-in-out ${
-        darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-800"
+        isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-800"
       }`}
     >
       {/* Content Side */}
       <div
-        className="flex flex-col   px-6  pb-6 "
+        className="flex flex-col   px-6  pb-2 "
         style={{ boxShadow: "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px" }}
       >
         <img src={loginImage} alt="Notice Image" className="w-96  rounded-lg" />
@@ -132,20 +129,20 @@ const LoginPage = () => {
       <div className="w-1/2 flex flex-col justify-center items-center p-10">
         <div
           className={`w-96 ${
-            darkMode ? "bg-gray-800" : "bg-white"
+            isDarkMode ? "bg-gray-800" : "bg-white"
           } shadow-lg p-8 rounded-lg text-center transform transition-all duration-500 ease-in-out hover:scale-105`}
         >
           <img
             src={figmetLogo}
             alt="Login Image"
-            className="w-28 mb-8 m-auto"
+            className="w-28  mb-4  mx-auto"
           />
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="relative">
               <input
                 className={`w-full px-3 py-2 border rounded-lg font-lato-thin ${
-                  darkMode
+                  isDarkMode
                     ? "bg-gray-700 text-white"
                     : "bg-gray-100 text-gray-800"
                 } focus:outline-none focus:border-blue-500`}
@@ -159,7 +156,7 @@ const LoginPage = () => {
             <div className="relative">
               <input
                 className={`w-full px-3 py-2 border rounded-lg font-lato-thin ${
-                  darkMode
+                  isDarkMode
                     ? "bg-gray-700 text-white"
                     : "bg-gray-100 text-gray-800"
                 } focus:outline-none focus:border-blue-500`}
@@ -183,7 +180,7 @@ const LoginPage = () => {
             </div>
             <button
               className={`w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 ${
-                darkMode ? "hover:bg-blue-700" : "hover:bg-blue-600"
+                isDarkMode ? "hover:bg-blue-700" : "hover:bg-blue-600"
               }`}
               type="submit"
             >
@@ -200,13 +197,13 @@ const LoginPage = () => {
           </div>
         </div>
 
-        <div className="mt-5">OR</div>
+        <div className="mt-6">OR</div>
         {/* Google and Microsoft Sign-in Options */}
         <div className="flex justify-between gap-4 mt-4">
           <button
             onClick={handleGoogleSignIn}
             className={`flex items-center justify-center  gap-2 px-2 py-2 ${
-              darkMode
+              isDarkMode
                 ? "border border-gray-700 text-white"
                 : "border border-gray-300 text-gray-800"
             } `}
@@ -217,7 +214,7 @@ const LoginPage = () => {
           <button
             onClick={handleMicrosoftSignIn}
             className={`flex items-center justify-center gap-2 ${
-              darkMode
+              isDarkMode
                 ? "border border-gray-700 text-white"
                 : "border border-gray-300 text-gray-800"
             } px-2 py-2`}
@@ -227,17 +224,8 @@ const LoginPage = () => {
           </button>
         </div>
       </div>
-      {/* Dark Mode Toggle */}
-      <div className="absolute top-0 right-0 m-4">
-        <button
-          className={`p-2 rounded-full ${
-            darkMode ? "bg-white text-gray-800" : "bg-gray-800 text-white"
-          }`}
-          onClick={toggleDarkMode}
-        >
-          {darkMode ? <CiLight /> : <MdDarkMode />}
-        </button>
-      </div>
+
+     <Switcher/>
     </div>
   );
 };

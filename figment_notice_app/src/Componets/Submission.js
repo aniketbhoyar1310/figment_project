@@ -49,7 +49,7 @@ const Submission = () => {
                   href="#"
                   className="ms-1 text-sm font-medium  hover:text-black md:ms-2 text-[rgb(77,140,255)] "
                 >
-                  Notice
+               Submission
                 </Link>
               </div>
             </li>
@@ -114,7 +114,7 @@ const Submission = () => {
                       <input
                         type="text"
                         id="input"
-                        class="mt-1 py-1 block w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                        class="mt-1 py-1  pl-2 block w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
                       />
                     </div>
                     <div class="mb-7">
@@ -127,7 +127,7 @@ const Submission = () => {
                       <input
                         type="text"
                         id="input"
-                        class="mt-1 py-1 block w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                        class="mt-1 py-1  pl-2 block w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
                       />
                     </div>
                     <button

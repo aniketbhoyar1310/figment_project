@@ -6,23 +6,32 @@ import Navbar from "./Navbar";
 
 const ChangePassword = () => {
   const [showPassword, setShowPassword] = useState(false);
-
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    companyName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    category: "",
-    mobileNumber: "",
-    referredBy: "",
+    newPassword: "",
+    retypeNewPassword: "",
   });
-
   const [formErrors, setFormErrors] = useState({});
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (formData.newPassword !== formData.retypeNewPassword) {
+      setFormErrors({ retypeNewPassword: "Passwords do not match" });
+    } else {
+      // Proceed with form submission
+      console.log("Form submitted");
+    }
   };
 
   return (
@@ -40,21 +49,6 @@ const ChangePassword = () => {
           </li>
           <li>
             <div className="flex items-center">
-              <svg
-                className="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 6 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m1 9 4-4-4-4"
-                />
-              </svg>
               <Link
                 to="/profile"
                 className="ms-1 text-sm font-medium hover:text-black md:ms-2 text-[rgb(77,140,255)] "
@@ -74,17 +68,17 @@ const ChangePassword = () => {
                 <li className="nav-item">
                   <Link
                     to="/profile"
-                    className="nav-link bg-[rgb(244,244,245)] border border-blue-500 text-black me-1 py-1 my-1"
+                    className="nav-link bg-[rgb(244,244,245)] border border-blue-500 text-black me-1 py-1"
                   >
-                    <span className="fw-bold">Account</span>
+                    <span>Account</span>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link
                     to="/changepassword"
-                    className="nav-link bg-[rgb(77,140,255)] text-white py-1 my-1"
+                    className="nav-link bg-[rgb(77,140,255)] text-white py-1 "
                   >
-                    <span className="fw-bold">Change Password</span>
+                    <span>Change Password</span>
                   </Link>
                 </li>
               </ul>
@@ -95,7 +89,7 @@ const ChangePassword = () => {
                       <h4 className="card-title">Change Password</h4>
                     </div>
                     <div className="my-25 card-body">
-                      <form className="pt-50">
+                      <form className="pt-50" onSubmit={handleSubmit}>
                         <div className="mb-2 col-sm-6">
                           <label
                             htmlFor="Password"
@@ -105,107 +99,90 @@ const ChangePassword = () => {
                           </label>
                           <div className="input-group-merge input-group">
                             <input
-                              maxLength={50}
-                              placeholder="············"
-                              id="Password"
-                              autoComplete="new-password"
-                              name="Password"
-                              type="password"
+                              defaultValue={123444}
+                              id="currentPassword"
+                              type={showPassword ? "text" : "password"}
+                              name="currentPassword"
+                              value={formData.currentPassword}
+                              onChange={handleInputChange}
                               className="form-control focus:outline-none focus:ring-0  focus:border-blue-500"
-                              defaultValue=""
                             />
-                            <span className="cursor-pointer input-group-text">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={14}
-                                height={14}
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              >
-                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
-                                <line x1={1} y1={1} x2={23} y2={23} />
-                              </svg>
+                            <span
+                              className="cursor-pointer input-group-text"
+                              onClick={toggleShowPassword}
+                            >
+                              {showPassword ? (
+                                <IoEyeOffOutline />
+                              ) : (
+                                <IoEyeOutline />
+                              )}
                             </span>
                           </div>
                         </div>
 
                         <div className="row">
-                        <div className="mb-2 col-sm-6">
-                          <label
-                            htmlFor="Password"
-                            className="form-label form-label"
-                          >
-                            New Password
-                          </label>
-                          <div className="input-group-merge input-group">
-                            <input
-                              maxLength={50}
-                              placeholder="············"
-                              id="Password"
-                              autoComplete="new-password"
-                              name="Password"
-                              type="password"
-                              className="form-control focus:outline-none focus:ring-0  focus:border-blue-500"
-                              defaultValue=""
-                            />
-                            <span className="cursor-pointer input-group-text">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={14}
-                                height={14}
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
+                          <div className="mb-2 col-sm-6">
+                            <label
+                              htmlFor="Password"
+                              className="form-label form-label"
+                            >
+                              New Password
+                            </label>
+                            <div className="input-group-merge input-group">
+                              <input
+                                id="newPassword"
+                                type={showPassword ? "text" : "password"}
+                                name="newPassword"
+                                value={formData.newPassword}
+                                onChange={handleInputChange}
+                                className="form-control focus:outline-none focus:ring-0  focus:border-blue-500"
+                              />
+                              <span
+                                className="cursor-pointer input-group-text"
+                                onClick={toggleShowPassword}
                               >
-                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
-                                <line x1={1} y1={1} x2={23} y2={23} />
-                              </svg>
-                            </span>
+                                {showPassword ? (
+                                  <IoEyeOffOutline />
+                                ) : (
+                                  <IoEyeOutline />
+                                )}
+                              </span>
+                            </div>
                           </div>
-                        </div>
-                        <div className="mb-2 col-sm-6">
-                          <label
-                            htmlFor="Password"
-                            className="form-label form-label"
-                          >
-                            Retype New Password
-                          </label>
-                          <div className="input-group-merge input-group">
-                            <input
-                              maxLength={50}
-                              placeholder="············"
-                              id="Password"
-                              autoComplete="new-password"
-                              name="Password"
-                              type="password"
-                              className="form-control focus:outline-none focus:ring-0  focus:border-blue-500"
-                              defaultValue=""
-                            />
-                            <span className="cursor-pointer input-group-text">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={14}
-                                height={14}
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
+                          <div className="mb-2 col-sm-6">
+                            <label
+                              htmlFor="Password"
+                              className="form-label form-label"
+                            >
+                              Retype New Password
+                            </label>
+                            <div className="input-group-merge input-group">
+                              <input
+                                id="retypeNewPassword"
+                                type={showPassword ? "text" : "password"}
+                                name="retypeNewPassword"
+                                value={formData.retypeNewPassword}
+                                onChange={handleInputChange}
+                                className="form-control focus:outline-none focus:ring-0  focus:border-blue-500"
+                                defaultValue=""
+                              />
+                              <span
+                                className="cursor-pointer input-group-text"
+                                onClick={toggleShowPassword}
                               >
-                                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
-                                <line x1={1} y1={1} x2={23} y2={23} />
-                              </svg>
-                            </span>
+                                {showPassword ? (
+                                  <IoEyeOffOutline />
+                                ) : (
+                                  <IoEyeOutline />
+                                )}
+                              </span>
+                            </div>
+                            {formErrors.retypeNewPassword && (
+                              <p className="text-red-500 text-sm mt-3">
+                                {formErrors.retypeNewPassword}
+                              </p>
+                            )}
                           </div>
-                        </div>
                           <div className=" justify-start">
                             <h4 className="font-lato-bold  py-3   me-2 mb-2">
                               Password Requirements :
@@ -221,18 +198,18 @@ const ChangePassword = () => {
                               character
                             </h4>
                           </div>
-                          <div className="mt-2 col-sm-12">
-                          <button
+                          <div className="mt-2 col-sm-12 flex justify-start gap-4">
+                            <button
                               type="button"
-                              className="me-1 px-2 rounded-md  text-base font-medium text-red-500 py-1"
+                              className="me-1 px-4 py-1 rounded-md  text-base font-mediu border border-blue-500"
                             >
-                              Cancle
+                              Close
                             </button>
                             <button
                               type="submit"
-                              className="float-right bg-green-600 text-white px-2 rounded-md py-1 "
+                              className="bg-blue-500 text-white px-2 rounded-md py-1 "
                             >
-                              Save changes
+                              Save Changes
                             </button>
                           </div>
                         </div>

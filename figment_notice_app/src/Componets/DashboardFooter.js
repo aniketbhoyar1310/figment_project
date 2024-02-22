@@ -12,7 +12,7 @@ const DashboardFooter = () => {
                 <div className="row py-2.5 px-1 bg-sky-50 rounded-lg">
                   <div className="align-items-center col">
                     <span id="addCompany" style={{ cursor: "default" }}>
-                      <button
+                      <button 
                         type="button"
                         className="bg-white me-1 rounded-sm px-1 outline outline-1 outline-offset-2"
                       >

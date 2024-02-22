@@ -35,7 +35,7 @@ const Profile = () => {
               </svg>
               <Link
                 to="/profile"
-                className="ms-1 text-sm font-medium hover:text-black md:ms-2 text-[rgb(77,140,255)] "
+                className="ms-1 text-sm font-medium hover:text-black md:ms-2 text-blue-500 "
               >
                 Profile
               </Link>
@@ -44,19 +44,19 @@ const Profile = () => {
         </ol>
       </nav>
       <div className="">
-        {/*  */}
+
         <div className="container-fluid">
           <div className="row">
             <div className="m-auto col-8  my-2">
               <ul className="mb-2 nav nav-pills">
                 <li className="nav-item">
-                  <Link to='/profile' className="nav-link bg-[rgb(77,140,255)]  text-white me-1 py-1">
-                    <span className="fw-bold">Account</span>
+                  <Link to='/profile' className="nav-link bg-blue-500 text-white me-1 py-1">
+                    <span>Account</span>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to='/changepassword'  className="nav-link bg-[rgb(244,244,245)] border border-blue-500 text-black py-1">
-                    <span className="fw-bold">Change Password</span>
+                  <Link to='/changepassword'  className="nav-link bg-white   border border-blue-500 text-black py-1">
+                    <span>Change Password</span>
                   </Link>
                 </li>
               </ul>
@@ -157,16 +157,16 @@ const Profile = () => {
                             />
                           </div>
 
-                          <div className="mt-2 col-sm-12">
+                          <div className="mt-2 col-sm-12 flex  justify-start gap-4">
                             <button
                               type="button"
-                              className="me-1 px-2 rounded-md  text-base font-medium text-red-500 py-1"
+                              className="me-1 px-4 py-1 rounded-md  text-base font-mediu border border-blue-500"
                             >
-                              Cancle
+                            Close
                             </button>
                             <button
                               type="submit"
-                              className="float-right bg-green-600 text-white px-2 rounded-md py-1 "
+                              className=" bg-blue-500 text-white px-2 rounded-md py-1 "
                             >
                               Save changes
                             </button>
