@@ -7,7 +7,6 @@ import msinfo from "../Assest/ms-pictogram.svg";
 import Googleimg from "../Assest/download.svg";
 
 const SignUpPage = () => {
-  const navigate=useNavigate()
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -18,7 +17,6 @@ const SignUpPage = () => {
     confirmPassword: "",
     category: "",
     mobileNumber: "",
-    referredBy: "",
   });
   const [formErrors, setFormErrors] = useState({});
 
@@ -38,22 +36,20 @@ const SignUpPage = () => {
     e.preventDefault();
     const errors = {};
     for (const key in formData) {
-      if (!formData[key] && key !== "referredBy" && key !== "confirmPassword") {
+      if (!formData[key] && key !== "confirmPassword") {
         errors[key] = `${
           key.charAt(0).toUpperCase() + key.slice(1)
         } is required`;
       }
     }
-    if (formData.password !== formData.confirmPassword) {
+    if (formData.password.trim() !== formData.confirmPassword.trim()) {
       errors.confirmPassword = "Passwords do not match";
     }
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
     } else {
       console.log("Form Data:", formData);
-      alert("Sign in successfully")
-      navigate('/')
-      
+      alert("Sign up successfully");
     }
   };
 
@@ -112,16 +108,15 @@ const SignUpPage = () => {
             <div>
               <label
                 htmlFor="companyName"
-                className="block text-sm  font-lato-bold text-gray-700"
+                className="block text-sm font-lato-bold text-gray-700"
               >
-                Company Name <span className=" text-red-600">*</span>
+                Company Name <span className="text-red-600">*</span>
               </label>
               <input
-                placeholder="  Company name"
+                placeholder="Company name"
                 type="text"
-                name="company Name"
+                name="companyName" // Corrected name attribute
                 id="companyName"
-                autoComplete="organization"
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
                 onChange={handleInputChange}
               />
@@ -177,7 +172,7 @@ const SignUpPage = () => {
               <input
                 placeholder="Confirm Password"
                 type="password"
-                name="confirm Password"
+                name="confirmPassword" // Remove the space in the name attribute
                 id="confirmPassword"
                 autoComplete="new-password"
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
@@ -215,14 +210,14 @@ const SignUpPage = () => {
             <div className="">
               <label
                 htmlFor="mobileNumber"
-                className="block text-sm  font-lato-bold text-gray-700"
+                className="block text-sm font-lato-bold text-gray-700"
               >
-                Mobile Number <span className=" text-red-600">*</span>
+                Mobile Number <span className="text-red-600">*</span>
               </label>
               <input
                 placeholder="Mobile Number"
                 type="text"
-                name="mobile Number"
+                name="mobileNumber" // Corrected name attribute
                 id="mobileNumber"
                 autoComplete=""
                 className="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"

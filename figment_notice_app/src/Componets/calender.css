@@ -1,0 +1,65 @@
+/* MyCalendar.css */
+
+/* Light mode styles */
+.light-calendar-container {
+
+
+  }
+  
+  .light-calendar {
+    /* Add any calendar styles for light mode here */
+  }
+  
+  /* Dark mode styles */
+  .dark-calendar-container {
+    border: 1px solid white;
+  }
+  
+  .dark-calendar {
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity)); /* Dark background color */
+    color: #ffffff; /* Light text color */
+    border: none; /* Remove border */
+    
+  }
+  
+  .dark-calendar .react-calendar__navigation button {
+    color: #ffffff; /* Navigation button color */
+  }
+  
+  .dark-calendar .react-calendar__tile--now {
+    background-color: #393939; /* Current date background color */
+  }
+  
+  .dark-calendar .react-calendar__tile--active {
+    background-color: #4a90e2; /* Active date background color */
+    color: #ffffff; /* Active date text color */
+  }
+  
+  
+  
+  .dark-calendar .react-calendar__tile--hasActive {
+    background-color: #4a90e2; /* Dates with active selection background color */
+  }
+  .dark-calendar .react-calendar__tile:enabled:hover {
+    background-color: #1c6e35;
+    color:hsl(0, 20%, 94%);
+
+}
+  
+  .dark-calendar .react-calendar__tile--hasActive:hover {
+    background-color: #4a90e2; /* Hovered dates with active selection background color */
+  }
+  
+  .dark-calendar .react-calendar__tile--now:enabled:active,
+  .dark-calendar .react-calendar__tile--now:enabled:hover {
+    background-color: #4a90e2; /* Active or hovered current date background color */
+  }
+  
+  .dark-calendar .react-calendar__tile--active:enabled:hover,
+  .dark-calendar .react-calendar__tile--active:enabled:focus {
+    background-color: #4a90e2; /* Active or focused date background color */
+  }
+  abbr[title]{
+    text-decoration: none;
+  }
+  

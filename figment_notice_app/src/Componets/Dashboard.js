@@ -18,7 +18,7 @@ const Dashboard = () => {
   return (
     <div className=''>
         <Navbar/>
-        <div className='container-fluid  bg-sky-50 px-4'>
+        <div className='container-fluid  bg-sky-50  dark:bg-gray-900 px-4'>
           <div className='row align-items-center'>
             <div className='col-lg-9 col-md-6 col-sm-12 '>
               <div className='row my-4'>

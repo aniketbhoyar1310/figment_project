@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = () => {
   return (
-    <div class=" box bg-white  rounded-lg shadow transition-all hover:scale-110 duration-700 dark:bg-black">
+    <div class=" box  bg-slate-50  dark:bg-gray-800  rounded-lg shadow transition-all hover:scale-110 duration-700">
       <div class="flex px-3 pt-2 ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@ const Card = () => {
           stroke-width="2"
           stroke-linecap="round"
            stroke-linejoin="round"
-          class="lucide lucide-shopping-cart-icon stroke-1.5 w-[24px] h-[28px] text-gray-500"
+          class="lucide lucide-shopping-cart-icon stroke-1.5 w-[24px] h-[28px] text-gray-500 dark:text-white"
         >
           <circle cx="8" cy="21" r="1"></circle>
           <circle cx="19" cy="21" r="1"></circle>
@@ -41,8 +41,8 @@ const Card = () => {
           </p>
         </div>
       </div>
-      <div class="mt-3 px-3 text-1.5xl font-medium leading-8">4.710</div>
-      <p class="px-3 pb-1 text-slate-500">Item Sales</p>
+      <div class="mt-3 px-3 text-1.5xl font-medium leading-8 dark:text-white">4.710</div>
+      <p class="px-3 pb-1 text-slate-500  dark:text-white">Item Sales</p>
     </div>
   );
 };
